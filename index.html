@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" href="images/favicon.png" type="image/png" />
+	<title>Expleo Experience Center</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/modal-9col.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			// Gets the video src from the data-src on each button
+			var $videoSrc;
+			$('.video-btn').click(function () {
+				$videoSrc = $(this).data("src");
+			});
+			console.log($videoSrc);
+			// when the modal is opened autoplay it  
+			$('#myModal').on('shown.bs.modal', function (e) {
+				// set the video src to autoplay and not to show related video. Youtube related video is like a box of chocolates... you never know what you're gonna get
+				$("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
+			})
+			// stop playing the youtube video when I close the modal
+			$('#myModal').on('hide.bs.modal', function (e) {
+				// a poor man's stop video
+				$("#video").attr('src', $videoSrc);
+			})
+			// document ready  
+		});
+	</script>
+</head>
+<body>
+	<div class="container-fluid bg-expleo">
+		<div class="row">
+			<div class="col-sm-4 flip-card">
+				<button type="button" class="btn btn-primary video-btn flip-card-inner" data-toggle="modal"
+					data-src="video/blockchain.mp4" data-target="#myModal">
+					<div class="flip-card-front color-green">
+						Blockchain
+					</div>
+					<div class="flip-card-back">						
+						Play Blockchain Demo
+					</div>
+				</button>
+			</div>			
+			<div class="col-sm-4 flip-card">
+				<button type="button" class="btn btn-primary video-btn flip-card-inner" data-toggle="modal"
+					data-src="video/aml.mp4" data-target="#myModal">
+					<div class="flip-card-front color-magenta">
+						AML - RPA
+					</div>
+					<div class="flip-card-back">						
+						Play RPA Demo
+					</div>					
+				</button>
+			</div>			
+			<div class="col-sm-4 flip-card">
+				<button type="button" class="btn btn-primary video-btn flip-card-inner" data-toggle="modal"
+					data-src="video/faximme.mp4" data-target="#myModal">
+					<div class="flip-card-front color-purplelight">
+						FaXimmē
+					</div>
+					<div class="flip-card-back">						
+						Play FaXimmē Demo
+					</div>
+				</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4 flip-card">
+				<button type="button" class="btn btn-primary video-btn flip-card-inner" data-toggle="modal"
+					data-src="video/sg_cards.mp4" data-target="#myModal">
+					<div class="flip-card-front color-orangedark">
+						ScriptGenie
+					</div>
+					<div class="flip-card-back">						
+						Play SG Cards Demo
+					</div>
+				</button>			
+			</div>			
+			<div class="col-sm-4 flip-card">
+				<button type="button" class="btn btn-primary video-btn flip-card-inner" data-toggle="modal"
+					data-src="video/Zap.mp4" data-target="#myModal">
+					<div class="flip-card-front color-teal">
+						ZAP
+					</div>
+					<div class="flip-card-back">						
+						Play ZAP Demo
+					</div>
+				</button>
+			</div>
+			<div class="col-sm-4 flip-card">
+				<a href="https://192.168.23.51:5000" class="btn btn-primary video-btn flip-card-inner" target="_blank">		
+					<div class="flip-card-front color-bluedark">
+						Voice Bot
+					</div>
+					<div class="flip-card-back">						
+						Open Voice Assistant
+					</div>
+				</a>	
+			</div>			
+		</div>
+		<div class="row">
+			<div class="col-sm-4 flip-card">
+				<button type="button" class="btn btn-primary video-btn flip-card-inner" data-toggle="modal"
+					data-src="video/sg_cards.mp4" data-target="#myModal">
+					<div class="flip-card-front color-yellow">
+						ScriptGenie
+					</div>
+					<div class="flip-card-back">						
+						Play SG Cards Demo
+					</div>
+				</button>			
+			</div>			
+			<div class="col-sm-4 flip-card">
+				<button type="button" class="btn btn-primary video-btn flip-card-inner" data-toggle="modal"
+					data-src="video/Zap.mp4" data-target="#myModal">
+					<div class="flip-card-front color-orangedark">
+						ZAP
+					</div>
+					<div class="flip-card-back">						
+						Play ZAP Demo
+					</div>
+				</button>
+			</div>
+			<div class="col-sm-4 flip-card">
+				<a href="https://192.168.23.51:5000" class="btn btn-primary video-btn flip-card-inner" target="_blank">		
+					<div class="flip-card-front color-redlight">
+						Voice Bot
+					</div>
+					<div class="flip-card-back">						
+						Open Voice Assistant
+					</div>
+				</a>	
+			</div>			
+		</div>	
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog modal-xl" role="document">
+				<div class="modal-content">
+					<div class="modal-body">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						<!-- 16:9 aspect ratio -->
+						<div class="embed-responsive embed-responsive-16by9">
+							<iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always"
+								allow="autoplay"></iframe>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>	
+</body>
+</html>                            
+
+
+
