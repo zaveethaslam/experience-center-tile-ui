@@ -29,6 +29,7 @@ body{overflow:hidden}
 .color-red{background-color:#b91d47}
 .color-redlight{background-color:#e11}
 .color-white{background-color:#fff}
+.color-lightyellow{background-color:#f021cf}
 .modal-dialog button.close{position:absolute;z-index:9999;right:-1rem;top:-1rem;width:3rem;background-color:#fff;height:3rem;opacity:1!important;font-size:2rem;border-radius:6rem;cursor:pointer;font-weight:700;color:#9577d4;line-height:2rem;outline:none;text-align:center;margin:0 auto}
 @media only screen and (max-width: 1390px) {
 	.flip-card-front,.flip-card-back{padding:7rem 1rem;}
