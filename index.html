@@ -30,7 +30,12 @@
 				//$("#video").attr('src', $videoSrc);
 				location.reload();
 			})
-			// document ready  
+			// To disable right click events
+			$(function() {
+				$(this).bind("contextmenu", function(e) {
+					e.preventDefault();
+				});
+			}); 
 		});
 	</script>
 </head>
